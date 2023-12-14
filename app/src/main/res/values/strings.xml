@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DisasterDB</string>
+    <string name="scroll_to_top">Scroll Up</string>
+    <string name="search_disaster">Search Disaster</string>
+    <string name="bookmark">Bookmark</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_bookmark">Bookmark</string>
+    <string name="menu_profile">Profile</string>
+
+    <string name="save_bookmark">Save Bookmark?</string>
+
+</resources>
