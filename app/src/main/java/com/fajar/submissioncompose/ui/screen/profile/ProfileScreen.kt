@@ -39,7 +39,7 @@ fun ProfileScreen(
     ) {
         
         Image(
-            painter = painterResource(R.drawable.jetpack_compose),
+            painter = painterResource(R.drawable.img_3744e),
             contentDescription = "Profile Picture",
             modifier = Modifier
                 .padding(4.dp)
@@ -55,7 +55,7 @@ fun ProfileScreen(
         )
 
         Text(
-            text = "Android Developer",
+            text = "crackspace990@gmail.com",
             fontSize = 20.sp,
         )
         

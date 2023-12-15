@@ -1,6 +1,5 @@
 package com.fajar.submissioncompose.ui.screen.bookmark
 
-import com.fajar.submissioncompose.model.BookmarkedDisaster
 import com.fajar.submissioncompose.model.Disaster
 
 data class BookmarkState (

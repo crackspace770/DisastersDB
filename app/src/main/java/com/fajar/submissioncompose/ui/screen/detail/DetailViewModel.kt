@@ -3,7 +3,6 @@ package com.fajar.submissioncompose.ui.screen.detail
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fajar.submissioncompose.data.DisasterRepository
-import com.fajar.submissioncompose.model.BookmarkedDisaster
 import com.fajar.submissioncompose.model.Disaster
 import com.fajar.submissioncompose.ui.common.UiState
 import kotlinx.coroutines.flow.MutableStateFlow

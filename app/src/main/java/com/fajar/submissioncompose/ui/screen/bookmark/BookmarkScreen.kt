@@ -1,5 +1,6 @@
 package com.fajar.submissioncompose.ui.screen.bookmark
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -35,6 +36,7 @@ fun BookmarkScreen(
             Injection.provideRepository()
         )
     ),
+    navigateToDetail: (Long) -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsState(initial = UiState.Loading)
 
@@ -44,7 +46,8 @@ fun BookmarkScreen(
         }
         is UiState.Success -> {
             BookmarkContent(
-                (uiState as UiState.Success<BookmarkState>).data
+                (uiState as UiState.Success<BookmarkState>).data,
+                navigateToDetail = navigateToDetail,
             )
         }
         is UiState.Error -> {
@@ -57,12 +60,13 @@ fun BookmarkScreen(
 @Composable
 fun BookmarkContent(
     state: BookmarkState,
+    navigateToDetail: (Long) -> Unit,
     modifier: Modifier = Modifier
 ) {
     CenterAlignedTopAppBar(
         title = {
             Text(
-                text = stringResource(R.string.bookmark),
+                text = stringResource(R.string.empty_bookmark),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 12.dp),
@@ -81,7 +85,10 @@ fun BookmarkContent(
             DisasterItem(
                 name = item.name,
                 date = item.date,
-                image = item.image
+                image = item.image,
+                modifier = Modifier.clickable {
+                    navigateToDetail(item.id)
+                },
             )
         }
     }

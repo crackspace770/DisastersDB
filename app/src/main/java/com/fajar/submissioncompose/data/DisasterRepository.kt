@@ -1,24 +1,18 @@
 package com.fajar.submissioncompose.data
 
-import com.fajar.submissioncompose.model.BookmarkedDisaster
 import com.fajar.submissioncompose.model.Disaster
 import com.fajar.submissioncompose.model.DisasterData
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.map
+
 
 class DisasterRepository {
 
     private val disasterDetail : List<Disaster> = DisasterData.disaster
     private val bookmarkedDisasters: MutableSet<Long> = mutableSetOf()
 
-    fun getAllDisaster(): Flow<List<Disaster>> {
-        return flowOf(disasterDetail)
-    }
-
-    fun getDisaster(): List<Disaster>{
+    fun getAllDisaster(): List<Disaster> {
         return DisasterData.disaster
     }
+
 
     fun searchDisaster(query: String): List<Disaster>{
         return DisasterData.disaster.filter {
@@ -26,11 +20,6 @@ class DisasterRepository {
         }
     }
 
-    fun searchDisasterById(id: Long): Disaster{
-        return DisasterData.disaster.first{
-            it.id == id
-        }
-    }
 
     fun getDisasterById(disasterId: Long): Disaster {
         return disasterDetail.first {

@@ -64,7 +64,9 @@ fun DisasterApp (
             }
             composable(Screen.Bookmark.route) {
               //  val context = LocalContext.current
-                BookmarkScreen()
+                BookmarkScreen(navigateToDetail = { disasterId ->
+                    navController.navigate(Screen.DetailDisaster.createRoute(disasterId))
+                })
             }
             composable(Screen.Profile.route) {
                 ProfileScreen()
